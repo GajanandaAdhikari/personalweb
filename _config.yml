@@ -1,7 +1,7 @@
-title: Gajananda Mani Adhikari
+title: Gajananda Adhikari
 description: Cloud and security engineer. Projects, research and writing.
 url: "https://gajananda.com.np"   # your custom domain
-email: scraping@bot.com
+email: gajanandaadhikari@proton.me
 permalink: /writing/:year/:title/
 exclude: [README.md]
 nav:
