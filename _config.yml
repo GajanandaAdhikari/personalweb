@@ -2,6 +2,7 @@ title: Gajananda Adhikari
 description: Cloud and security engineer. Projects, research and writing.
 url: "https://gajananda.com.np"   # your custom domain
 email: gajanandaadhikari@proton.me
+medium_user: @GajanandaAdhikari
 permalink: /writing/:year/:title/
 exclude: [README.md]
 nav:
@@ -12,4 +13,3 @@ nav:
 links:
   - {title: GitHub, url: "https://github.com/GajanandaAdhikari"}
   - {title: LinkedIn, url: "https://www.linkedin.com/in/gajananda"}
-  medium_user: @GajanandaAdhikari
