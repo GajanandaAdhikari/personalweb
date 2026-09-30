@@ -1,0 +1,14 @@
+title: Gajananda Mani Adhikari
+description: Cloud and security engineer. Projects, research and writing.
+url: "https://example.com"   # your custom domain
+email: you@example.com
+permalink: /writing/:year/:title/
+exclude: [README.md]
+nav:
+  - {title: Work, url: /work/}
+  - {title: Writing, url: /writing/}
+  - {title: About, url: /about/}
+  - {title: Contact, url: /contact/}
+links:
+  - {title: GitHub, url: "https://github.com/YOUR-HANDLE"}
+  - {title: LinkedIn, url: "https://www.linkedin.com/in/YOUR-HANDLE"}

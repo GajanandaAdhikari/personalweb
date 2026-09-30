@@ -1,0 +1,4 @@
+{% for p in include.items limit: include.limit %}
+<div class="row item"><div class="l meta">{{ p.date | date: "%-d %b %Y" }}</div>
+<div class="r"><h3><a href="{{ p.url }}">{{ p.title }}</a></h3>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</div></div>
+{% endfor %}

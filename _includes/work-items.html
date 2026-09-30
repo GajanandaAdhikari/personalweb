@@ -1,0 +1,5 @@
+{% for w in include.items %}
+<div class="row item"><div class="l meta">{{ w.year | default: w.kind }}</div>
+<div class="r"><h3>{% if w.url %}<a href="{{ w.url }}">{{ w.title }}</a>{% else %}{{ w.title }}{% endif %}</h3>
+<p>{{ w.desc }}</p>{% if w.tags %}<p class="meta">{{ w.tags | join: ", " }}</p>{% endif %}</div></div>
+{% endfor %}

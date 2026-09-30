@@ -1,0 +1,7 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+<div class="row sec"><h1 class="l t2">About</h1><div class="r"></div></div>
+{% for a in site.data.about %}<div class="row item"><div class="l meta">{{ a.label }}</div><p class="r">{{ a.text }}</p></div>{% endfor %}

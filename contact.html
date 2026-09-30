@@ -1,0 +1,8 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+<div class="row sec"><h1 class="l t2">Contact</h1><div class="r"></div></div>
+<div class="row item"><div class="l meta">Email</div><p class="r"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p></div>
+{% for l in site.links %}<div class="row item"><div class="l meta">{{ l.title }}</div><p class="r"><a href="{{ l.url }}">{{ l.url | remove: "https://" | remove: "www." }}</a></p></div>{% endfor %}

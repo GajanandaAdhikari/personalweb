@@ -1,0 +1,40 @@
+:root{--bg:#fff;--fg:#111;--mute:#666;--red:#e30613;--g:24px}
+*{box-sizing:border-box}
+html{font:17px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+body{margin:0}
+a{color:inherit;text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:var(--g);top:8px;background:var(--bg);padding:4px 8px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--g)}
+.row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g)}
+.l{grid-column:1/4}.r{grid-column:4/13}
+.bar{padding:20px 0;border-bottom:2px solid var(--fg);align-items:baseline}
+.brand{font-weight:700;text-decoration:none;display:flex;gap:10px;align-items:center}
+.brand i{width:12px;height:12px;background:var(--red);flex:none}
+nav{display:flex;gap:32px}
+nav a{text-decoration:none}
+nav a:hover,nav a[aria-current]{text-decoration:underline;text-decoration-thickness:2px}
+.hero{padding:96px 0 48px}
+h1{font-size:clamp(44px,8.5vw,120px);line-height:.95;letter-spacing:-.045em;font-weight:700;margin:0}
+h1.t2{font-size:clamp(28px,4vw,44px);letter-spacing:-.03em;line-height:1.05}
+h2{font-size:17px;font-weight:700;margin:0}
+h3{font-size:21px;line-height:1.25;letter-spacing:-.01em;margin:0 0 4px}
+h3 a{text-decoration:none}h3 a:hover{text-decoration:underline}
+p{margin:0 0 8px}
+.lead{font-size:clamp(22px,2.6vw,32px);line-height:1.25;letter-spacing:-.02em;max-width:26em}
+.sec{padding:32px 0}
+.item{border-top:1px solid var(--fg);padding:16px 0 20px}
+.meta{color:var(--mute);font-size:15px}
+.prose{max-width:66ch;margin-top:32px}
+.prose h2{font-size:24px;margin:32px 0 8px;letter-spacing:-.02em}
+.prose code{background:#f2f2f2;padding:1px 4px}
+.prose pre{background:#f2f2f2;padding:16px;overflow-x:auto}
+footer{border-top:2px solid var(--fg);margin-top:64px;padding:20px var(--g) 48px}
+@media(max-width:720px){
+.l,.r{grid-column:1/13}
+.l{margin-bottom:4px}
+.bar{row-gap:12px}
+nav{gap:20px;flex-wrap:wrap}
+.hero{padding:56px 0 24px}
+}

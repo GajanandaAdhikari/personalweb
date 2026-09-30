@@ -1,0 +1,18 @@
+# Add a project: copy a block. featured: true shows it on the home page.
+# year is optional; if omitted, kind is shown instead.
+- title: OPAQUE password protocol in Go
+  kind: Software
+  desc: An implementation of the OPAQUE password-authenticated key exchange protocol.
+  tags: [Go, cryptography, PAKE]
+  featured: true
+- title: Land surface temperature forecasting for Kathmandu
+  kind: Research
+  year: 2024
+  desc: Co-authored preprint on machine-learning forecasts using NASA climate data.
+  tags: [machine learning, remote sensing]
+  featured: true
+- title: Gamified visualization of algorithms
+  kind: Paper
+  desc: Conference paper from the BE project on teaching algorithms through interactive visualization.
+  tags: [education, visualization]
+  featured: true

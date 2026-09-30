@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% unless page.url == '/' %}{{ page.title }} | {% endunless %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description | escape }}">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap"><div class="row bar">
+<a class="brand l" href="{{ '/' | relative_url }}"><i></i>{{ site.title }}</a>
+<nav class="r">{% for n in site.nav %}<a href="{{ n.url | relative_url }}"{% if page.url contains n.url %} aria-current="page"{% endif %}>{{ n.title }}</a>{% endfor %}</nav>
+</div></header>
+<main id="main" class="wrap">{{ content }}</main>
+<footer class="wrap"><div class="row"><div class="l meta">{{ 'now' | date: "%Y" }}</div>
+<div class="r meta">{% for l in site.links %}<a href="{{ l.url }}">{{ l.title }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</div></div></footer>
+</body></html>
