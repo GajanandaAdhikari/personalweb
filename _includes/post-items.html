@@ -1,4 +1,10 @@
-{% for p in include.items limit: include.limit %}
-<div class="row item"><div class="l meta">{{ p.date | date: "%-d %b %Y" }}</div>
-<div class="r"><h3><a href="{{ p.url }}">{{ p.title }}</a></h3>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</div></div>
+{% assign keys = "" | split: "" %}
+{% for m in site.data.medium %}{% capture k %}{{ m.date }}|m|{{ forloop.index0 }}{% endcapture %}{% assign keys = keys | push: k %}{% endfor %}
+{% for p in site.posts %}{% capture k %}{{ p.date | date: "%Y-%m-%d" }}|p|{{ forloop.index0 }}{% endcapture %}{% assign keys = keys | push: k %}{% endfor %}
+{% assign keys = keys | sort | reverse %}
+{% for k in keys limit: include.limit %}
+{% assign part = k | split: "|" %}{% assign i = part[2] | plus: 0 %}
+{% if part[1] == "m" %}{% assign it = site.data.medium[i] %}{% assign src = "Medium" %}{% else %}{% assign it = site.posts[i] %}{% assign src = "" %}{% endif %}
+<div class="row item"><div class="l meta">{{ part[0] | date: "%-d %b %Y" }}</div>
+<div class="r"><h3><a href="{{ it.url }}"{% if src != "" %} rel="noopener"{% endif %}>{{ it.title }}</a></h3>{% if it.description %}<p>{{ it.description }}</p>{% endif %}{% if src != "" %}<p class="meta">{{ src }}</p>{% endif %}</div></div>
 {% endfor %}
