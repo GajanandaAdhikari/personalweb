@@ -2,9 +2,16 @@ name: Sync Medium
 on:
   schedule: [{cron: "0 6 * * *"}]
   workflow_dispatch:
+  push:
+  paths:
+    - scripts/fetch_medium.py
+    - _config.yml
+    - .github/workflows/sync-medium.yml
+
 permissions:
   contents: write
   pages: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
