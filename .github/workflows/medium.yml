@@ -1,0 +1,25 @@
+name: Sync Medium
+on:
+  schedule: [{cron: "0 6 * * *"}]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/fetch_medium.py
+      - name: Commit and rebuild
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add _data/medium.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Sync Medium"
+            git push
+            gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" || true
+          fi
